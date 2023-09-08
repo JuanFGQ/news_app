@@ -17,8 +17,7 @@ class ListaNoticias extends StatelessWidget {
         // *********************************************************
         return _Noticia(noticia: this.noticias[index], index: index);
         /*
-        aqui tengo que devolver valores referentes a las variable 
-        declaradas en la clase _Noticia de la linea 31,32
+
         *************************************************************
         */
       },
@@ -26,12 +25,11 @@ class ListaNoticias extends StatelessWidget {
   }
 }
 
-// clase creada en 295 inicio
+//  295 
 
 class _Noticia extends StatelessWidget {
   final Article noticia;
 
-  // la objetivo de este index es saber en que noticia estoy 1,2,3 etc
   final int index;
 
   const _Noticia({required this.noticia, required this.index});
@@ -157,10 +155,9 @@ class _TarjetaTopBar extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
-          // este index me enumera las noticas
+          // this index enum the news
           Text('${index + 1}.',
               style: TextStyle(color: Colors.white, fontSize: 15)),
-          // este text me dice las fuentes de las noticias
           Text(
             '${noticia.source.name}.',
             style: TextStyle(
