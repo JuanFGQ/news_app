@@ -4,7 +4,7 @@ import 'package:news_app/src/models/category_model.dart';
 import 'package:news_app/src/models/news_models.dart';
 import 'package:http/http.dart' as http;
 
-// creado en 292 , 5:29"
+//  292 , 5:29"
 
 final _URL_NEWS = 'https://newsapi.org/v2';
 final _APIKEY = '2a9b8b7fb27348e8a959c3d43b8fc3e1';
@@ -14,7 +14,7 @@ class NewsService with ChangeNotifier {
 
   String _selectedCategory = 'business';
 
-  // creado clase 299
+  //  299
 
   List<Category> categories = [
     Category(FontAwesomeIcons.building, 'business'),
@@ -38,19 +38,18 @@ class NewsService with ChangeNotifier {
   }
 // **********************************************************************
 
-  // creado en clase 301
+  //  301
 
   get selectedCategory => this._selectedCategory;
   set selectedCategory(valor) {
     this._selectedCategory = valor;
 
-    // print(valor);
 
     this.getArticlesByCategory(valor);
     notifyListeners();
   }
   //****************************************************************** */
-// creado en clase 303 .
+//  303 .
 
   List<Article>? get getArticulosCategoriaSeleccionada =>
       this.categoryArticles[this.selectedCategory];
@@ -68,7 +67,6 @@ class NewsService with ChangeNotifier {
     print('httpsUri');
 
 /*
-*el newsResponse viene desde el archivo model que sacamos de postman
 */
     final newsResponse = newsResponseFromJson(resp.body);
 
@@ -78,7 +76,7 @@ class NewsService with ChangeNotifier {
 
 //********************************************************************* */
 
-// clase 301
+//  301
 
   getArticlesByCategory(String category) async {
     if (this.categoryArticles[category]!.length > 0) {
