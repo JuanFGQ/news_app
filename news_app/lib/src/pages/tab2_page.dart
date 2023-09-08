@@ -27,11 +27,7 @@ class Tab2page extends StatelessWidget {
 class _Lista_Categorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-/*
-*con este final es poner al provider a buscar dentro de newService
-(la busqueda la representa con la palabra context)
-*y el .categories es el docuemento en especifico que quiero traer
-*/
+
     final categories = Provider.of<NewsService>(context).categories;
 
     return Container(
@@ -42,10 +38,7 @@ class _Lista_Categorias extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (BuildContext context, int index) {
-          /*
-            *aqui busca dentro de categories... [index] es el indice
-            *donde va a buscar la palabra name
-            */
+       
           final cName = categories[index].name;
 
           return Padding(
@@ -89,7 +82,6 @@ class _CategoryButton extends StatelessWidget {
         ),
         child: Icon(categoria.icon,
 
-            /*metodo para cambiar el color del icono de la categoria seleccioanda
         */
             color: (newsService.selectedCategory == categoria.name)
                 ? myTheme.colorScheme.secondary
