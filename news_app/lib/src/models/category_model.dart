@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// creado clase 299
+//  299
 
 class Category {
   final IconData icon;
