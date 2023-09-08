@@ -10,8 +10,7 @@ class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      // *_NavegacionModel es una instacia de esta misma clase
-      // *donde solo puedo tener acceso a
+
       create: (_) => new _NavegacionModel(),
       child: Scaffold(
         body: _Paginas(),
@@ -24,21 +23,14 @@ class TabsPage extends StatelessWidget {
 class _Navegacion extends StatelessWidget {
   @override
 
-  // *el context es u objeto que tiene toda la informacion de su
-  // *arbol de widgets
+
   Widget build(BuildContext context) {
     final navegacionModel = Provider.of<_NavegacionModel>(context);
 
     return BottomNavigationBar(
       currentIndex: navegacionModel.paginaActual,
 
-      /*
-      *con el (i) obtengo el indice de valores disponibles segun
-      *las opciones desplegadas en el bottomNavigationBar
-
-      *con la variable final declarada obtengo la instacia
-      *y en el on tab cambio el valor mediante la instancia llamada
-      */
+ 
       onTap: (i) => navegacionModel.paginaActual = i,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'para ti'),
@@ -57,7 +49,6 @@ class _Paginas extends StatelessWidget {
     return PageView(
       controller: navegacionModel.pageController,
 
-      // efecto al hacer scroll a la pagina
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         Tab1Page(),
@@ -71,15 +62,12 @@ class _NavegacionModel with ChangeNotifier {
   int _paginaActual = 0;
   PageController _pageController = new PageController();
 
-  // haciendo getter
 
   int get paginaActual => this._paginaActual;
 
-  // haciendo setter
   set paginaActual(int valor) {
     this._paginaActual = valor;
 
-// *el indice equivale al valor que recibo
     _pageController.animateToPage(valor,
         duration: Duration(microseconds: 250), curve: Curves.bounceOut);
     notifyListeners();
