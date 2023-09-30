@@ -15,6 +15,6 @@
  
   ![main page](https://user-images.githubusercontent.com/97085649/230687210-d445ec4f-f81a-41ae-a66b-311a06ce8c8f.png)
   
-  ## Cathegories page
+  ## Categories page
   
 ![firs cathegory](https://user-images.githubusercontent.com/97085649/230687262-bf29aee0-ea2a-4514-92f5-3fc4738c9fd1.png)
